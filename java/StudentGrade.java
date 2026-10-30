@@ -14,7 +14,7 @@ public class StudentGrade{
     System.out.println("Saving >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
     System.out.println("Saved successfully");
 
-    //int[][] studentGrade = classroomSheet(totalStudents, totalSubjects);
+    int[][] studentGrade = classroomSheet(totalStudents, totalSubjects);
 
     System.out.println("==========================================================================================================================================================");
     System.out.print("STUDENT \t");
@@ -24,10 +24,19 @@ public class StudentGrade{
     System.out.print("TOTAL\t");
     System.out.print("AVG\t");
     System.out.print("POS\n");
-    
-    
     System.out.println("==========================================================================================================================================================");
-    System.out.println();
+    
+    for(int count = 1; count <= totalStudents; count++){
+      System.out.println("Student"+count+"\t");
+    }
+    
+    for(int count = 0; count < studentGrade.length; count++){
+      for(int counter = 0; counter < studentGrade[count].length; counter++){
+        System.out.print(studentGrade[counter][count]+ "\t");
+      }
+      System.out.println();
+    }
+    
     System.out.println("==========================================================================================================================================================");
     System.out.println();
     System.out.println("==========================================================================================================================================================");
@@ -42,12 +51,13 @@ public class StudentGrade{
     
     for(int count = 0; count < grade.length; count++){
       for(int counter = 0; counter < grade[count].length; counter++){
-        System.out.println("Entering for Student " + (student + 1));
-        System.out.println("Enter score for Subject" + (subject + 1));
+        System.out.println("Entering for Student " + (count + 1));
+        System.out.println("Enter score for Subject" + (counter + 1));
         int subject_score = scanner.nextInt();
         grade[count][counter] = subject_score;
         System.out.println("Saving>>>>>>>>>>>>>>>>>>>>>>>>");
         System.out.println("Saved successfully");
+        System.out.println();
       }  
     }        
     return grade;
