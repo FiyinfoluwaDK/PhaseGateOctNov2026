@@ -38,10 +38,8 @@ public class StudentGrade{
         System.out.print(total[count]+ "\t");
         
         System.out.print(average[count]+ "\t");
-        
-      }
       
-      System.out.print("\n");
+        System.out.print("\n");
     }
     
     System.out.println("==========================================================================================================================================================");
@@ -86,7 +84,7 @@ public class StudentGrade{
       
     }
     
-     public static int[] eachStudentAverage(int[][] grade){
+     public static double[] eachStudentAverage(int[][] grade){
       double[] averageScore = new double[grade.length];
       
       for(int count = 0; count < grade.length; count++){
