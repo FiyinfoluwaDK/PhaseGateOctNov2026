@@ -2,6 +2,10 @@ def classroom_sheet(students, subjects):
     grade = []
     for student in range(students):
         for subject in range(subjects):
+            subject_score = int(input(f"""
+            Entering for Student {student + 1}
+            Enter score for Subject {subject + 1}
+            """))
             grade[student].append(subject)
 
 def student_insert(grade, number_of_student):
@@ -16,5 +20,12 @@ def total_score_append(grade):
     
     return grade
     
-def t
+total_students = int(input("How many students do you have?"))
+
+total_subjects = int(input("How many subjects do they offer?"))
+
+print("Saving >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+print("Saved successfully")
+
+student_grade = classroom_sheet(total_students, total_subjects)
 
