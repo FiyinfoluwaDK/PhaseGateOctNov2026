@@ -26,15 +26,13 @@ public class StudentGrade{
     System.out.print("POS\n");
     System.out.println("==========================================================================================================================================================");
     
-    for(int count = 1; count <= totalStudents; count++){
-      System.out.println("Student"+count+"\t");
-    }
+    for(int count = 0; count < totalStudents; count++){
+      System.out.println("Student"+(count+1)+"\t");
     
-    for(int count = 0; count < studentGrade.length; count++){
-      for(int counter = 0; counter < studentGrade[count].length; counter++){
+      for(int counter = 0; counter < totalStudents; counter++){
         System.out.print(studentGrade[counter][count]+ "\t");
       }
-      System.out.println();
+      System.out.print("\t");
     }
     
     System.out.println("==========================================================================================================================================================");
