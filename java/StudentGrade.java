@@ -93,7 +93,7 @@ public class StudentGrade{
         totalScore[count] = (total*1.0)/grade[count].length;
       }
       
-      return totalScore;
+      return averageScore;
       
     }
   
