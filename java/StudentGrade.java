@@ -15,6 +15,8 @@ public class StudentGrade{
     System.out.println("Saved successfully");
 
     int[][] studentGrade = classroomSheet(totalStudents, totalSubjects);
+    int[] total = eachStudentTotal(studentGrade);
+    double[] average = eachStudentAverage(studentGrade);
 
     System.out.println("==========================================================================================================================================================");
     System.out.print("STUDENT \t");
@@ -33,7 +35,11 @@ public class StudentGrade{
         System.out.print(studentGrade[count][counter]+ "\t");
       }
       
-      for()
+        System.out.print(total[count]+ "\t");
+        
+        System.out.print(average[count]+ "\t");
+        
+      }
       
       System.out.print("\n");
     }
@@ -68,7 +74,6 @@ public class StudentGrade{
     public static int[] eachStudentTotal(int[][] grade){
       int[] totalScore = new int[grade.length];
       
-      
       for(int count = 0; count < grade.length; count++){
         int total = 0;
         for(int counter = 0; counter < grade[count].length; counter++){
@@ -83,7 +88,6 @@ public class StudentGrade{
     
      public static int[] eachStudentAverage(int[][] grade){
       double[] averageScore = new double[grade.length];
-      
       
       for(int count = 0; count < grade.length; count++){
         int total = 0;
