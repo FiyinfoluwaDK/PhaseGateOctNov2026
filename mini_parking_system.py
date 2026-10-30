@@ -9,10 +9,7 @@ def parking_into_spot(parking, spot):
         print(parking)
         return parking
         
-    else:
-        print("Out of Bounds")
-        
-        
+  
 def parking_leaving_spot(parking, spot):
     if parking[spot-1] == 1:
         parking[spot-1] = 0
@@ -23,9 +20,6 @@ def parking_leaving_spot(parking, spot):
     elif parking[spot-1] == 0:
         print("Spot is already empty")
     
-    else:
-        print("Out of Bounds")
-
 
 
 parking_session = True
