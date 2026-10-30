@@ -10,7 +10,7 @@ public class StudentGrade{
 
     System.out.println("How many subjects do they offer?");
     int totalSubjects = scanner.nextInt();
-
+    
     System.out.println("Saving >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
     System.out.println("Saved successfully");
 
@@ -55,15 +55,20 @@ public class StudentGrade{
     Scanner scanner = new Scanner(System.in);
     
     for(int count = 0; count < grade.length; count++){
-      for(int counter = 0; counter < grade[count].length; counter++){
+      for(int counter = 0; counter < grade[count].length;){
         System.out.println("Entering for Student " + (count + 1));
         System.out.println("Enter score for Subject " + (counter + 1));
-        int subject_score = scanner.nextInt();
-        grade[count][counter] = subject_score;
-        System.out.println("Saving>>>>>>>>>>>>>>>>>>>>>>>>");
-        System.out.println("Saved successfully");
-        System.out.println();
-      }  
+        int subjectScore = scanner.nextInt();
+        
+        if(subjectScore >= 1 && subjectScore <= 100){
+          grade[count][counter] = subjectScore;
+          counter++;
+          System.out.println("Saving>>>>>>>>>>>>>>>>>>>>>>>>");
+          System.out.println("Saved successfully");
+          System.out.println();
+      }
+      else System.out.println("Invalid Input, Try again");
+     }  
     }        
     return grade;
   }    
@@ -98,6 +103,8 @@ public class StudentGrade{
       return averageScore;
       
     }
+    
+    public static int[]
   
   
 }
