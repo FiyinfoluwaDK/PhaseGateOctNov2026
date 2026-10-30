@@ -90,7 +90,7 @@ public class StudentGrade{
         for(int counter = 0; counter < grade[count].length; counter++){
           total += grade[count][counter];
         }
-        totalScore[count] = (total*1.0)/grade[count].length;
+        averageScore[count] = (total*1.0)/grade[count].length;
       }
       
       return averageScore;
