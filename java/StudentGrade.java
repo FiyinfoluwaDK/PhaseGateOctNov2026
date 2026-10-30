@@ -32,6 +32,9 @@ public class StudentGrade{
       for(int counter = 0; counter < totalStudents; counter++){
         System.out.print(studentGrade[count][counter]+ "\t");
       }
+      
+      for()
+      
       System.out.print("\n");
     }
     
@@ -60,11 +63,39 @@ public class StudentGrade{
     }        
     return grade;
   }    
+  
+  
+    public static int[] eachStudentTotal(int[][] grade){
+      int[] totalScore = new int[grade.length];
       
+      
+      for(int count = 0; count < grade.length; count++){
+        int total = 0;
+        for(int counter = 0; counter < grade[count].length; counter++){
+          total += grade[count][counter];
+        }
+        totalScore[count] = total;
+      }
+      
+      return totalScore;
+      
+    }
     
-    
-  
-  
+     public static int[] eachStudentAverage(int[][] grade){
+      double[] averageScore = new double[grade.length];
+      
+      
+      for(int count = 0; count < grade.length; count++){
+        int total = 0;
+        for(int counter = 0; counter < grade[count].length; counter++){
+          total += grade[count][counter];
+        }
+        totalScore[count] = (total*1.0)/grade[count].length;
+      }
+      
+      return totalScore;
+      
+    }
   
   
 }
