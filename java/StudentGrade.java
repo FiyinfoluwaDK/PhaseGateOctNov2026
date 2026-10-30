@@ -11,21 +11,23 @@ public class StudentGrade{
     System.out.println("How many subjects do they offer?");
     int totalSubjects = scanner.nextInt();
 
-    System.out.print("Saving >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-    System.out.print("Saved successfully");
+    System.out.println("Saving >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+    System.out.println("Saved successfully");
 
     //int[][] studentGrade = classroomSheet(totalStudents, totalSubjects);
 
     System.out.println("==========================================================================================================================================================");
     System.out.print("STUDENT \t");
     for(int count = 1; count <= totalSubjects; count++){
-      System.out.println("SUB"+count+"\t");
+      System.out.print("SUB"+count+"\t");
     }
     
   }
   
   public static int[][] classroomSheet(int student, int subject){
     int[][] grade = new int[student][subject];
+    
+    Scanner scanner = new Scanner(System.in);
     
     for(int count = 0; count < grade.length; count++){
       for(int counter = 0; counter < grade[count].length; counter++){
