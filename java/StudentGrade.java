@@ -27,12 +27,12 @@ public class StudentGrade{
     System.out.println("==========================================================================================================================================================");
     
     for(int count = 0; count < totalStudents; count++){
-      System.out.println("Student"+(count+1)+"\t");
+      System.out.print("Student"+(count+1)+"\t");
     
       for(int counter = 0; counter < totalStudents; counter++){
-        System.out.print(studentGrade[counter][count]+ "\t");
+        System.out.print(studentGrade[count][counter]+ "\t");
       }
-      System.out.print("\t");
+      System.out.print("\n");
     }
     
     System.out.println("==========================================================================================================================================================");
