@@ -17,6 +17,7 @@ public class StudentGrade{
     int[][] studentGrade = classroomSheet(totalStudents, totalSubjects);
     int[] total = eachStudentTotal(studentGrade);
     double[] average = eachStudentAverage(studentGrade);
+    int[] position = positionIndex(total);
 
     System.out.println("==========================================================================================================================================================");
     System.out.print("STUDENT \t");
@@ -38,6 +39,8 @@ public class StudentGrade{
         System.out.print(total[count]+ "\t");
         
         System.out.print(average[count]+ "\t");
+        
+        System.out.print(position[count]+ "\t");
       
         System.out.print("\n");
     }
@@ -104,7 +107,20 @@ public class StudentGrade{
       
     }
     
-    //public static int[]
+    public static int[] positionIndex(int[] scores){
+      int[] positions = new int[scores.length];
+      
+      for(int count = 0; count < scores.length; count++){
+        int position = 0;
+        for(int counter = 0; counter < scores.length; counter++){
+          if(scores[counter] > scores[count]){
+            position++;
+          }
+        }
+        positions[count] = position + 1;
+      }
+      return positions;
+     }
   
   
 }
