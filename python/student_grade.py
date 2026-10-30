@@ -1,5 +1,5 @@
 def classroom_sheet(students, subjects):
-    grade = []
+    grade = [[]]
     for student in range(students):
         subject_scores = []
         
