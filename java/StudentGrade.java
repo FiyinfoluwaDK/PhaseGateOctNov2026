@@ -50,6 +50,7 @@ public class StudentGrade{
     System.out.println("==========================================================================================================================================================");
     
     
+    
   }
   
   public static int[][] classroomSheet(int student, int subject){
@@ -122,5 +123,29 @@ public class StudentGrade{
       return positions;
      }
   
+    public static int highestSubjectScore(int[][] grade, int subject) {
+    int highest = grade[0][subject];
+
+    for (int student = 0; student < grade.length; student++) {
+      if (grade[student][subject] > highest) {
+        highest = grade[student][subject];
+      }
+    }
+
+    return highest;
+  }
+  
+  public static int lowestSubjectScore(int[][] grade, int subject) {
+
+    int lowest = grade[0][subject];
+
+    for (int student = 0; student < grade.length; student++) {
+
+      if (grade[student][subject] < lowest) {
+        lowest = grade[student][subject];
+     }
+    }
+    return lowest;
+  }
   
 }
