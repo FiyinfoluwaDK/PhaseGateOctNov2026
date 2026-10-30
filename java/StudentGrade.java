@@ -52,7 +52,7 @@ public class StudentGrade{
     for(int count = 0; count < grade.length; count++){
       for(int counter = 0; counter < grade[count].length; counter++){
         System.out.println("Entering for Student " + (count + 1));
-        System.out.println("Enter score for Subject" + (counter + 1));
+        System.out.println("Enter score for Subject " + (counter + 1));
         int subject_score = scanner.nextInt();
         grade[count][counter] = subject_score;
         System.out.println("Saving>>>>>>>>>>>>>>>>>>>>>>>>");
