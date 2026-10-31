@@ -49,7 +49,18 @@ public class StudentGrade{
     System.out.println();
     System.out.println("==========================================================================================================================================================");
     
-    
+    System.out.println("SUBJECT SUMMARY");
+
+    for (int count = 0; count < studentGrade[0].length; count++) {
+
+        System.out.println("\nSubject " + (count + 1));
+        System.out.println("Highest scoring student is : Student "+ highestStudent(studentGrade, count));
+        System.out.println("Lowest scoring student is : Student "+ lowestStudent(studentGrade, count));
+        System.out.println("Total score: "+ subjectTotal(studentGrade, count));
+        System.out.println("Average score: "+subjectAverage(studentGrade, count));
+        System.out.println("Number of passes: "+ numberOfPasses(studentGrade, count));
+        System.out.println("Number of fails: "+ numberOfFails(studentGrade, count));
+    }
     
   }
   
@@ -126,26 +137,124 @@ public class StudentGrade{
     public static int highestSubjectScore(int[][] grade, int subject) {
     int highest = grade[0][subject];
 
-    for (int student = 0; student < grade.length; student++) {
-      if (grade[student][subject] > highest) {
-        highest = grade[student][subject];
+    for (int count = 0; count < grade.length; count++) {
+      if (grade[count][subject] > highest) {
+        highest = grade[count][subject];
       }
     }
-
     return highest;
+  }
+  
+  public static int highestStudent(int[][] grade, int subject) {
+    int highest = 0;
+
+    for (int count = 0; count < grade.length; count++) {
+        if (grade[count][subject] > grade[highest][subject]) {
+            highest = count;
+        }
+    }
+    return highest + 1;
   }
   
   public static int lowestSubjectScore(int[][] grade, int subject) {
 
     int lowest = grade[0][subject];
 
-    for (int student = 0; student < grade.length; student++) {
-
-      if (grade[student][subject] < lowest) {
-        lowest = grade[student][subject];
+    for (int count = 0; count < grade.length; count++) {
+      if (grade[count][subject] < lowest) {
+        lowest = grade[count][subject];
      }
     }
     return lowest;
   }
+  
+  public static int lowestStudent(int[][] grade, int subject) {
+    int lowest = 0;
+
+    for (int count = 0; count < grade.length; count++) {
+        if (grade[count][subject] < grade[lowest][subject]) {
+            lowest = count;
+        }
+    }
+
+    return lowest + 1;
+  }
+  
+  public static int subjectTotal(int[][] grade, int subject) {
+    int total = 0;
+
+    for (int count = 0; count < grade.length; count++) {
+        total += grade[count][subject];
+    }
+    return total;
+  }
+  
+  public static double subjectAverage(int[][] grade, int subject) {
+
+    return (subjectTotal(grade, subject) *1.0) / grade.length;
+  }
+  
+  public static int numberOfPasses(int[][] grade, int subject) {
+    int passes = 0;
+
+    for (int count = 0; count < grade.length; count++) {
+        if (grade[count][subject] >= 50) {
+            passes++;
+        }
+    }
+    return passes;
+  }
+  
+  public static int numberOfFails(int[][] grade, int subject) {
+    int fails = 0;
+
+    for (int count = 0; count < grade.length; count++) {
+        if (grade[count][subject] < 50) {
+            fails++;
+        }
+    }
+    return fails;
+  }
+
+  
+  public static int bestGraduatingStudent(int[][] grade) {
+
+    int[] total = eachStudentTotal(grade);
+    int best = 0;
+
+    for (int count = 1; count < total.length; count++) {
+        if (total[count] > total[best]) {
+            best = count;
+        }
+    }
+    return best + 1;
+  }
+  
+  public static int worstGraduatingStudent(int[][] grade) {
+
+    int[] total = eachStudentTotal(grade);
+    int worst = 0;
+
+    for (int count = 1; count < total.length; count++) {
+        if (total[count] < total[worst]) {
+            worst = count;
+        }
+    }
+    return worst + 1;
+  }
+  
+  public static int highestTotal(int[][] grade) {
+
+    int[] total = eachStudentTotal(grade);
+    int highest = total[0];
+
+    for (int count = 1; count < total.length; count++) {
+        if (total[count] > highest) {
+            highest = total[count];
+        }
+    }
+    return highest;
+  }
+  
   
 }
